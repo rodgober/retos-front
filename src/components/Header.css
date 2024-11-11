@@ -1,0 +1,107 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+}
+  
+.hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px; /* Grosor de las líneas */
+    background-color: #333; /* Color de las líneas */
+    border-radius: 2px; /* Redondeo de las esquinas */
+    transition: 0.3s; /* Transición para animaciones */
+}
+  
+.hamburger-menu.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-menu.open span:nth-child(2) {
+    opacity: 0; /* Desaparece la línea del medio */
+}
+
+.hamburger-menu.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav-menu ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Espacio entre las opciones del menú */
+}
+
+.nav-menu li {
+    display: inline;
+}
+  
+.nav-menu a {
+    color: white; /* Cambia el color del texto a blanco */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    font-size: 18px; /* Ajusta el tamaño de la fuente según tus necesidades */
+    transition: color 0.3s ease; /* Transición suave para cambios de color */
+}
+  
+.nav-menu a:hover {
+    color: #191E32; /* Color al pasar el ratón (ajusta según tus necesidades) */
+}
+
+.cta-buttons {
+    display: flex;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+  
+.login-btn {
+    background-color: transparent;
+    color: #191E32;
+    border: 2px solid #191E32;
+}
+  
+.signup-btn {
+    background-color: #191E32;
+    color: white;
+}
+
+  /* Tablets portrait, larger phones */
+  @media (max-width: 768px) {
+    .nav-menu {
+        display: none; 
+    }
+    .nav-space {
+        display: flex;
+    }
+    .btn {
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+      margin-left: 5px;
+      border-radius: 5px;
+      font-weight: 400;
+      font-size: 10px;
+    }
+  
+    .login-btn {
+      background-color: transparent;
+      color: #191E32;
+      border: 2px solid #191E32;
+    }
+  
+  }

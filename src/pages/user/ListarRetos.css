@@ -1,0 +1,56 @@
+h2, h3{
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.perfil-container{
+    display: grid;
+    gap: 10px 30px; /* Espacio entre filas y entre columnas */
+    font-weight: bold;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+/* Contenedor de los retos resueltos */
+/* Contenedor de los retos resueltos */
+.resolved-challenges {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    max-width: 100%; /* Ocupa toda la anchura */
+    margin: 0;
+}
+
+/* Tarjeta individual del reto */
+.challenge-card {
+    display: block;
+    background: linear-gradient(135deg, #191E32 0%, #2aa9b7 100%);
+    padding: 10px 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    text-decoration: none; /* Quita el subrayado del enlace */
+}
+
+.challenge-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Título del reto */
+.challenge-title {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Fecha de resolución */
+.challenge-date {
+    font-size: 14px;
+    margin: 5px 0 0;
+    opacity: 0.9;
+    font-weight: 300;
+}

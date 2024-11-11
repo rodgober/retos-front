@@ -1,0 +1,56 @@
+.form-container {
+
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.challenge-form {
+    display: grid;
+    gap: 15px 20px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center; /* Center align vertically */
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 10px; /* Space between label and input */
+    width: 200px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select,
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group.full-width {
+    grid-column: span 1; /* Make the button span across both columns */
+}
+
+.challenge-form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.challenge-form button:hover {
+    background-color: #45a049;
+}

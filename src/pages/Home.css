@@ -1,0 +1,169 @@
+.container-home {
+    width: 100%;
+}
+
+.container-home img {
+    width: 100%; /* La imagen se ajusta al 100% del ancho del contenedor interno */
+    height: auto; /* Mantiene la proporción de aspecto de la imagen */
+    display: block; /* Evita el pequeño espacio inferior de las imágenes en línea */
+}
+
+.slogan {
+    text-align: center;
+  }
+
+  /* Estilo del cuadro flotante */
+.floating-box {
+    position: absolute;
+    top: 200px; /* Ajusta la posición superior */
+    right: 600px; /* Ajusta la posición derecha */
+    width: 300px; /* Ancho del cuadro */
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto flotante */
+    text-align: center;
+}
+
+  /* Estilo del cuadro flotante */
+.floating-button {
+    position: absolute;
+    top: 550px; /* Ajusta la posición superior */
+    right: 600px; /* Ajusta la posición derecha */
+    width: 300px; /* Ancho del cuadro */
+    padding: 20px;
+    background-color: #2aa9b7;
+    border-style: none;
+    color: #191E32;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+  /* Estilo del texto dentro del cuadro */
+.floating-box h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+  /* Contenedor principal de los cuadros */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columnas iguales */
+    gap: 20px; /* Espacio entre cuadros */
+    width: 80%; /* Ajusta el ancho para centrarlo mejor */
+    max-width: 1000px; /* Limita el ancho máximo */
+    margin: 0 auto; /* Centra el contenedor en la página */
+    padding: 20px 0; /* Espaciado vertical */
+    box-sizing: border-box;
+}
+  
+  /* Estilo para cada cuadro */
+.grid-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%; /* Ocupa el 100% de su columna */
+}
+  
+.grid-item h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+  
+.grid-item p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #6c757d;
+}
+  
+.participa-button{
+    width: 200px; /* Ancho del cuadro */
+    padding: 15px;
+    background-color: #2aa9b7;
+    border-style: none;
+    color: #191E32;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    .slogan {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .floating-box {
+        position: absolute;
+        top: 200px; /* Ajusta la posición superior */
+        right: 400px; /* Ajusta la posición derecha */
+        width: 250px; /* Ancho del cuadro */
+        padding: 15px;
+    }
+
+    .floating-button {
+        position: absolute;
+        top: 430px; /* Ajusta la posición superior */
+        right: 400px; /* Ajusta la posición derecha */
+        width: 250px; /* Ancho del cuadro */
+        padding: 15px;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .floating-box h4 {
+        margin: 0;
+        font-size: 15px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    .slogan {
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .floating-box {
+        position: absolute;
+        top: 100px; /* Ajusta la posición superior */
+        right: 200px; /* Ajusta la posición derecha */
+        width: 150px; /* Ancho del cuadro */
+        padding: 10px;
+    }
+
+    .floating-button {
+        position: absolute;
+        top: 200px; /* Ajusta la posición superior */
+        right: 200px; /* Ajusta la posición derecha */
+        width: 150px; /* Ancho del cuadro */
+        padding: 10px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .floating-box h4 {
+        margin: 0;
+        font-size: 12px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+    }
+}

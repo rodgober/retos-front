@@ -1,0 +1,44 @@
+.list-container{
+    display: grid;
+    gap: 10px 30px; /* Espacio entre filas y entre columnas */
+    font-weight: bold;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.link-list {
+    display: flex;
+    flex-direction: column; /* Coloca los enlaces en una columna */
+    gap: 10px; /* Espacio entre cada enlace */
+    max-width: 500px; /* Limita el ancho de la lista */
+    padding-left: 0; /* Quita cualquier padding en el contenedor */
+}
+
+.list-link {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333; /* Color de texto inicial */
+    text-decoration: none;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease; /* Transición para color */
+}
+
+.list-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #6a11cb; /* Color de subrayado al hacer hover */
+    transition: width 0.3s ease; /* Transición para el subrayado */
+}
+
+.list-link:hover {
+    color: #6a11cb; /* Cambia el color de texto al hacer hover */
+}
+
+.list-link:hover::before {
+    width: 100%; /* Expande el subrayado al ancho completo */
+}

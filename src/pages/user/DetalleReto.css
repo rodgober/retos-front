@@ -1,0 +1,73 @@
+.reto-container {
+    display: grid; /* Usar grid */
+    gap: 20px; /* Espacio entre columnas */
+    padding: 20px 20px 20px 50px; /* padding: arriba derecha abajo izquierda */
+    background-color: #ffffff; /* Fondo del contenedor */
+}
+
+.reto-container h2 {
+    padding-left: 0px;
+}
+
+.reto-container h4 {
+    padding-left: 0px;
+}
+
+.reto-form {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+}
+
+.reto-form input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.reto-form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.reto-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #191E32;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.reto-button.hide {
+    display: none;
+}
+
+.reto-button:hover {
+    background-color: #155bc5;
+}
+
+@media (max-width: 480px) {
+    .reto-container {
+        padding: 2px;
+    }
+    .reto-container img {
+        width: 100%;  /* La imagen ocupará el 100% del ancho del contenedor */
+        height: auto; /* Mantiene la proporción de la imagen */
+    }
+    .reto-container h2 {
+        font-size: 16px;
+        padding-left: 0px;
+    }
+}

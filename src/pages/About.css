@@ -1,0 +1,48 @@
+.about-container {
+    display: flex;
+    gap: 20px; /* Espacio entre el texto y la imagen */
+    padding: 20px;
+    align-items: center; /* Centra verticalmente los elementos */
+}
+
+.about-text, .about-image {
+    flex: 1; /* Hace que cada columna ocupe el 50% */
+}
+
+.about-text h2, p {
+    margin-bottom: 20px; /* Ajusta el valor según el espacio deseado */
+    line-height: 1.6; /* Espaciado entre líneas dentro del párrafo para mejorar la legibilidad */
+}
+
+.about-image img {
+    width: 100%; /* Ajusta la imagen para que ocupe el ancho de su contenedor */
+    height: auto;
+    border-radius: 8px; /* Bordes redondeados opcionales */
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Cambia la dirección del flex a columna */
+        align-items: center; /* Centra los elementos horizontalmente */
+    }
+
+    .about-text, .about-image {
+        flex: none; /* Quita el flex para que no intenten ocupar el 50% */
+        width: 100%; /* Asegura que cada uno ocupe el 100% del ancho */
+        margin-bottom: 10px; /* Agrega espacio entre la imagen y el texto */
+    }
+
+    .about-image {
+        margin-bottom: 20px; /* Espacio entre la imagen y el texto */
+        order: 1; /* Pone la imagen abajo */
+    }
+
+    .about-text {
+        order: 2; /* Pone el texto arriba */
+    }
+
+    .about-text h2, p {
+        margin-bottom: 20px; /* Ajusta el valor según el espacio deseado */
+        line-height: 1.6; /* Espaciado entre líneas dentro del párrafo para mejorar la legibilidad */
+    }
+}

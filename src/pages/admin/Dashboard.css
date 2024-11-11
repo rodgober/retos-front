@@ -1,0 +1,67 @@
+.stats-container {
+    display: grid;
+    grid-template-columns: 250px 100px; /* Primera columna flexible y la segunda para números */
+    gap: 10px 30px; /* Espacio entre filas y entre columnas */
+    font-weight: bold;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.stat-item-text {
+    text-align: left; /* Alineación izquierda para el texto */
+}
+
+.stat-item-number {
+    text-align: left; /* Alineación izquierda para los números */
+}
+
+.button-links {
+    display: flex;
+    flex-direction: column; /* Coloca los botones en una columna */
+    gap: 15px; /* Espacio entre los botones */
+    max-width: 200px; /* Limita el ancho para mejor presentación */
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.button-link {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px; /* Bordes redondeados */
+    background: linear-gradient(135deg, #191E32, #2575fc); /* Gradiente */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: all 0.3s ease; /* Transición suave */
+    position: relative;
+    overflow: hidden;
+    text-align: center; /* Centrar texto en cada botón */
+}
+
+.button-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3); /* Efecto brillo */
+    transform: skewX(-25deg);
+    transition: all 0.5s ease;
+}
+
+.button-link:hover::before {
+    left: 100%; /* Mover brillo al hacer hover */
+}
+
+.button-link:hover {
+    transform: translateY(-5px); /* Levantar botón al hacer hover */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+.button-link:active {
+    transform: translateY(2px); /* Efecto de presionado */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Sombra reducida */
+}

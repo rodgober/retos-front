@@ -1,38 +1,169 @@
-.App {
-  text-align: center;
+/* General Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  margin-top: 20px;
+  padding-left: 20px;  /* Espacio a la izquierda */
+  padding-right: 20px; /* Espacio a la derecha */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p {
+  margin-bottom: 20px;
+  padding-top: 10px; /* Ajusta este valor según lo que necesites */
+  padding-left: 20px;  /* Espacio a la izquierda */
+  padding-right: 20px; /* Espacio a la derecha */
 }
 
-.App-header {
-  background-color: #282c34;
+body {
+font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  margin: 0;
+  padding: 0 10px; /* Evita que el contenido toque los bordes en móviles */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px; /* Da un poco más de espacio vertical */
+  background-color: #2aa9b7;
+  width: 100%;
+  max-width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
+  box-sizing: border-box;
+}
+
+.logo{
+  margin-bottom: -2px;
+}
+
+.logo img {
+  width: 70px; /* Ancho deseado */
+  height: auto; /* Alto deseado */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 1000px;
+  min-width: 1000px;
+  height: auto;
+  padding-bottom: 20px;
+  box-sizing: border-box; /* Asegura que el padding no afecte la altura */
+  margin: 0 auto;
+  position: relative;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+}
+
+.main-content {
+  flex: 1;
+}
+
+
+
+
+.footer {
+  background-color: #2aa9b7;
   color: white;
+  text-align: center;
+  padding: 0px;
+  position: absolute;
+  bottom: 0;
+  width: 100%; /* O establece un ancho fijo como max-width */
+  max-width: 1000px; /* Por ejemplo, un máximo si deseas limitar el ancho */
+  margin: 0 auto;
 }
 
-.App-link {
-  color: #61dafb;
+@media (max-width: 1000px) {
+  .container {
+    max-width: 100%; /* Ocupa todo el ancho de la pantalla */
+    padding: 0px; /* Reduce el padding para ahorrar espacio */
+    margin: 0; /* Elimina el margen automático */
+    flex-direction: column; /* Ya es column, pero asegúrate si cambia en otros tamaños */
+  }
+
+  .logo img {
+    width: 52px;
+    height: auto;
+  }
+
+  .header {
+    padding: 10px; /* Reduce el padding para aprovechar más espacio */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+  }
+
+  .footer {
+    position: relative; /* Cambia a relative para que esté al final del contenido */
+    max-width: 100%; /* Ocupa todo el ancho de la pantalla */
+    padding: 15px; /* Añade padding para mejorar la estética */
+    margin: 0; /* Elimina el margen centrado */
+    box-sizing: border-box; /* Asegura que el padding no expanda el ancho */
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Tablets portrait, larger phones */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%; /* Ocupa todo el ancho de la pantalla */
+    min-width: 100%;
+    padding: 0px; /* Reduce el padding para ahorrar espacio */
+    margin: 0; /* Elimina el margen automático */
+    flex-direction: column; /* Ya es column, pero asegúrate si cambia en otros tamaños */
   }
-  to {
-    transform: rotate(360deg);
+
+  .logo img {
+    width: 50px;
+    height: auto;
   }
+
+  .header {
+    padding: 10px; /* Reduce el padding para aprovechar más espacio */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+  }
+
+  .footer {
+    position: relative; /* Cambia a relative para que esté al final del contenido */
+    max-width: 100%; /* Ocupa todo el ancho de la pantalla */
+    padding: 15px; /* Añade padding para mejorar la estética */
+    margin: 0; /* Elimina el margen centrado */
+    box-sizing: border-box; /* Asegura que el padding no expanda el ancho */
+  }
+
+  /* Small phones */
+@media (max-width: 480px) {
+  .container {
+      width: 100%; /* Ajusta el contenedor al 100% del ancho de la pantalla */
+  }
+  .logo img {
+    width: 40px;
+    height: auto;
+  }
+
+  .footer {
+    position: relative; /* Cambia a relative para que esté al final del contenido */
+    max-width: 100%; /* Ocupa todo el ancho de la pantalla */
+    padding: 5px; /* Añade padding para mejorar la estética */
+    margin: 0; /* Elimina el margen centrado */
+    box-sizing: border-box; /* Asegura que el padding no expanda el ancho */
+    font-size: 12px;
+  }
+}
+
+
 }

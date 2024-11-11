@@ -1,0 +1,100 @@
+.register-container {
+    display: grid; /* Usar grid */
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 20px; /* Espacio entre columnas */
+    padding: 20px; /* Espaciado interno */
+    background-color: #ffffff; /* Fondo del contenedor */
+    max-width: 100%;
+}
+
+.left-section {
+    padding: 10px; /* Espaciado interno */
+    background-color: #ffffff; /* Fondo para distinguir */
+}
+
+.right-section {
+    padding: 10px; /* Espaciado interno */
+    background-color: #ffffff; /* Fondo para distinguir */
+}
+
+.logo-mathethon {
+    color: #191E32;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.tagline {
+    font-size: 20px;
+    color: #606770;
+}
+
+.register-form {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+}
+
+.register-form input[type="email"],
+.register-form input[type="text"],
+.register-form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.register-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #191E32;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.register-button:hover {
+    background-color: #155bc5;
+}
+
+.forgot-password {
+    display: block;
+    margin: 15px 0;
+    color: #1877f2;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #dddfe2;
+    margin: 20px 0;
+}
+
+@media (max-width: 480px) {
+    .register-container {
+        grid-template-columns: 1fr;
+        gap: 0px;
+    }
+    .left-section {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .right-section {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .right-section h1 {
+        font-size: 20px;
+    }
+}

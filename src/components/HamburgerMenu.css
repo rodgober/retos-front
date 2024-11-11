@@ -1,0 +1,82 @@
+.menu-container {
+    position: relative;
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: 0.3s ease;
+}
+
+.hamburger-menu.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+  
+.hamburger-menu.open span:nth-child(2) {
+    opacity: 0;
+}
+  
+.hamburger-menu.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+  /* Sidebar deslizante */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Fuera de la vista al inicio */
+    width: 235px;
+    height: 100vh;
+    background-color: #191E32;
+    color: #ffffff;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+
+.sidebar.show {
+    transform: translateX(250px); /* Mueve el sidebar a la vista */
+}
+
+.sidebar nav ul {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px; /* Ajusta el tamaño de la fuente según tus necesidades */
+    transition: color 0.3s ease; /* Transición suave para cambios de color */
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li:hover {
+    background-color: #f0f0f0; /* Cambia el color al pasar el mouse */
+    color: #191E32;
+}
+  
+.sidebar nav ul li {
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+  /* Overlay para hacer clic fuera del menú */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Cambia la opacidad si lo deseas */
+    z-index: 9; /* Coloca el overlay debajo del sidebar */
+}

@@ -1,0 +1,112 @@
+.login-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    max-width: 100%; /* Asegura que el contenedor no se expanda más allá del ancho de la pantalla */
+}
+
+.left-section {
+    padding: 10px; /* Espaciado interno */
+    background-color: #ffffff; /* Fondo para distinguir */
+}
+
+.right-section {
+    padding: 10px; /* Espaciado interno */
+    background-color: #ffffff; /* Fondo para distinguir */
+}
+
+.mathethon {
+    color: #191E32;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.tagline {
+    font-size: 20px;
+    color: #606770;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #191E32;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.login-button:hover {
+    background-color: #155bc5;
+}
+
+.forgot-password {
+    display: block;
+    margin: 15px 0;
+    color: #1877f2;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #dddfe2;
+    margin: 20px 0;
+}
+
+.create-account-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #42b72a;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.create-account-button:hover {
+    background-color: #36a420;
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        grid-template-columns: 1fr;
+        gap: 0px;
+    }
+    .left-section {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .right-section {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+}

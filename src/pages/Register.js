@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Register.css';
 import axios from 'axios';
 import config from '../config';
 
@@ -21,25 +22,36 @@ function Register() {
     try {
       const response = await axios.post(config.apiBaseUrl + '/api/register', { name, lastName, mail, password, role, nivel });
       // Muestra un mensaje de éxito en lugar de redirigir
-      setMessage('Registration successful! You can now log in.');
+      setMessage('Registro satisfactorio, ahora puedes iniciar sesión');
     } catch (error) {
-      setMessage(error.response.data.message);
+      setMessage(error.response.data);
     }
   };
 
+
+
   return (
-    <div>
-      <h1>Register</h1>
-      <form onSubmit={handleSubmit}>
-      <input type="text" placeholder="Nombre" value={name} onChange={(e) => setName(e.target.value)} required />
-      <input type="text" placeholder="Apellido" value={lastName} onChange={(e) => setLastname(e.target.value)} required />
-        <input type="email" placeholder="Email" value={mail} onChange={(e) => setMail(e.target.value)} required />
-        <input type="password" placeholder="Contraseña" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        <input type="password" placeholder="Confirmar Contraseña" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
-        <button type="submit">Register</button>
-        {message && <p>{message}</p>}
-      </form>
-    </div>
+      <div className='register-container'>
+        <div className="left-section">
+          <h1 className="logo-mathethon">Mathethon</h1>
+          <p className="tagline">Conéctate y descubre nuevos retos matemáticos para mejorar tus habilidades.</p>
+        </div>
+        <div className="right-section">
+            <h1>Crea una nueva cuenta</h1>
+            <p>Es fácil y gratuita</p>
+            <form className="register-form" onSubmit={handleSubmit}>
+            <input type="text" placeholder="Nombre" value={name} onChange={(e) => setName(e.target.value)} required />
+            <input type="text" placeholder="Apellido" value={lastName} onChange={(e) => setLastname(e.target.value)} required />
+              <input type="email" placeholder="Correo" value={mail} onChange={(e) => setMail(e.target.value)} required />
+              <input type="password" placeholder="Contraseña" value={password} onChange={(e) => setPassword(e.target.value)} required />
+              <input type="password" placeholder="Confirmar Contraseña" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
+              <button type="submit" className="register-button">Crear cuenta</button>
+              {message && <p>{message}</p>}
+              <hr />
+              <a href="/login" className="forgot-password">¿Ya tienes una cuenta?</a>  
+            </form>
+        </div>
+      </div>
   );
 }
 

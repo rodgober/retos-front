@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import './ListarRetos.css';
 import config from '../../config';
 
 const ListarRetos = () => {
@@ -50,25 +51,27 @@ const ListarRetos = () => {
     }, []);
   
     return (
-      <div>
+      <div className="container">
         <h1>Retos pendientes</h1>
         {error && <p>{error}</p>}
-        <ul>
-          {retos.map((reto) => (
-            <li key={reto._id}>
-              <Link to={`/reto/${reto._id}`}>Ver Reto {reto.nombre}</Link>
-            </li>
-          ))}
-        </ul>
+        <div className="resolved-challenges">
+            {retos.map((reto) => (
+              <a href={`/reto/${reto._id}`} className="challenge-card">
+                <h3 className="challenge-title">{reto.nombre}</h3>
+              </a>
+            ))}
+        </div>
+
         <h1>Retos resueltos</h1>
-        {error && <p>{error}</p>}
-        <ul>
-          {retosResueltos.map((reto) => (
-            <li key={reto._id}>
-              <Link to={`/reto/${reto.reto_id}`}>Ver Reto {reto.nombre}</Link>
-            </li>
-          ))}
-        </ul>
+        <div className="resolved-challenges">
+          {error && <p>{error}</p>}
+            {retosResueltos.map((reto) => (
+              <a href={`/reto/${reto.reto_id}`} className="challenge-card">
+                <h3 className="challenge-title">{reto.nombre}</h3>
+                <p className="challenge-date">Resuelto el: {new Date(reto.fecha_respuesta).toLocaleDateString()}</p>
+              </a>
+            ))}
+        </div>
       </div>
     );
 }

@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import config from '../config';
+import './Login.css';
 
-function Login() {
+const Login = ({ setIsAuthenticated, setUserMail }) => {
   const [mail, setMail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -14,29 +15,42 @@ function Login() {
     try {
       const response = await axios.post(config.apiBaseUrl + '/api/login', { mail, password });
       localStorage.setItem('token', response.data.token);
-      localStorage.setItem('userMail', mail); // Guarda el correo del usuario
+      localStorage.setItem('userMail', mail);
+      localStorage.setItem('name',response.data.name)
       localStorage.setItem('userRole', response.data.role);
-      console.log(response.data.role);
+      setIsAuthenticated(true);
+      setUserMail(mail);
       if (response.data.role === 'admin') {
         navigate('/dashboard');
       } else {
         navigate('/perfil');
       }
     } catch (error) {
-      setMessage(error.response.data.message);
+      setMessage(error.message);
     }
   };
 
+  const handleRegisterClick = () => {
+    navigate('/register'); // Redirige a la página de login
+  };
   return (
-    <div>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="email" placeholder="Email" value={mail} onChange={(e) => setMail(e.target.value)} required />
-        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        <button type="submit">Login</button>
-        {message && <p>{message}</p>}
-      </form>
-    </div>
+      <div className='login-container'>
+        <div className="left-section">
+          <h1 className="mathethon">Mathethon</h1>
+          <p className="tagline">Conéctate y descubre nuevos retos matemáticos para mejorar tus habilidades.</p>
+        </div>
+        <div className="right-section">
+          <form className="login-form" onSubmit={handleSubmit}>
+            <input type="email" placeholder="Correo" value={mail} onChange={(e) => setMail(e.target.value)} required />
+            <input type="password" placeholder="Contraseña" value={password} onChange={(e) => setPassword(e.target.value)} required />
+            <button type="submit" className="login-button">Iniciar sesión</button>
+            {message && <p>{message} errors</p>}
+            <a href="#" className="forgot-password">¿Se te olvidó tu contraseña?</a>
+            <hr />
+            <button type="button" className="create-account-button" onClick={handleRegisterClick}>Crear una cuenta nueva</button>
+          </form>
+        </div>
+      </div>
   );
 }
 
