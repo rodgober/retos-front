@@ -99,7 +99,7 @@ const DetalleReto = () => {
         const intentosEnUltimaHora = intentos.filter(intent => 
           new Date(intent.fecha_respuesta) >= haceUnaHora
         );
-        if (intentosEnUltimaHora.length > 4) {
+        if (intentosEnUltimaHora.length > 2) {
           setExcesointentos(true)
         }
       } catch (error) {

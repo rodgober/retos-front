@@ -39,6 +39,7 @@ const Home = ({ setIsAuthenticated, setUserMail }) => {
               ¡Regístrate!
               </button>
           </div>
+          <p></p>
       </div>
 
 

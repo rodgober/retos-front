@@ -39,6 +39,11 @@ const HamburgerMenu = ({ isAuthenticated }) => {
     navigate('/perfil');
   };
 
+  const handleRankingClick = () => {
+    closeMenu();
+    navigate('/statistics');
+  };
+
   const handleSidebarClick = (e) => {
     e.stopPropagation();
   };
@@ -60,6 +65,7 @@ const HamburgerMenu = ({ isAuthenticated }) => {
             <li onClick={handleInicioClick}>Inicio</li>
             <li onClick={handleQuienesClick}>¿Quiénes somos?</li>
             <li onClick={handleContactoClick}>Contacto</li>
+            <li onClick={handleRankingClick}>Ranking</li>
           </ul>
         </nav>
       </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Register.css';
 import axios from 'axios';
 import config from '../config';
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
   const [name, setName] = useState('');
@@ -12,6 +13,15 @@ function Register() {
   const [message, setMessage] = useState('');
   const [role, setRole] = useState('user');
   const [nivel, setNivel] = useState(0);
+  const [showPopup, setShowPopup] = useState(false); // Estado para controlar el popup
+  const navigate = useNavigate();
+
+  const handlePopupClose = () => {
+    setShowPopup(false); // Cierra el popup
+    navigate('/login'); // Redirige al usuario a la página de login
+  };
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Validar si las contraseñas coinciden
@@ -21,12 +31,15 @@ function Register() {
     }
     try {
       const response = await axios.post(config.apiBaseUrl + '/api/register', { name, lastName, mail, password, role, nivel });
-      // Muestra un mensaje de éxito en lugar de redirigir
-      setMessage('Registro satisfactorio, ahora puedes iniciar sesión');
+      if (response.status === 201) {
+        setShowPopup(true); // Muestra el popup si el registro es exitoso
+      }
     } catch (error) {
       setMessage(error.response.data);
     }
   };
+
+
 
 
 
@@ -50,6 +63,16 @@ function Register() {
               <hr />
               <a href="/login" className="forgot-password">¿Ya tienes una cuenta?</a>  
             </form>
+
+                {showPopup && (
+            <div className="popup">
+              <div className="popup-content">
+                <h3>¡Registro exitoso!</h3>
+                <p>Gracias por registrarte. Por favor, inicia sesión para continuar.</p>
+                <button onClick={handlePopupClose}>Aceptar</button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
   );
