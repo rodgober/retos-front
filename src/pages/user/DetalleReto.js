@@ -193,7 +193,7 @@ const DetalleReto = () => {
               type="text"
               placeholder="Escribe tu respuesta"
               value={respuesta}
-              onChange={(e) => setRespuesta(e.target.value)}
+              onChange={(e) => setRespuesta(e.target.value.trim())}
             />
           )}
           
