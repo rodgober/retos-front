@@ -49,7 +49,7 @@ const Login = ({ setIsAuthenticated, setUserMail }) => {
             <input type="password" placeholder="Contraseña" value={password} onChange={(e) => setPassword(e.target.value)} required />
             <button type="submit" className="login-button">Iniciar sesión</button>
             {message && <p>{message}</p>}
-            <a href="#" className="forgot-password">¿Se te olvidó tu contraseña?</a>
+            <a href="/forgotpassword" className="forgot-password">¿Se te olvidó tu contraseña?</a>
             <hr />
             <button type="button" className="create-account-button" onClick={handleRegisterClick}>Crear una cuenta nueva</button>
           </form>

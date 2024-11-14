@@ -30,6 +30,7 @@ function Contact() {
                 Escribe tu correo:
                 <input 
                     type="email" 
+                    placeholder="Correo"
                     value={email} 
                     onChange={(e) => setEmail(e.target.value)} 
                     required 
@@ -38,6 +39,7 @@ function Contact() {
             <label>
                 Escribe tu comentario:
                 <textarea 
+                    placeholder="Escribe tu comentario"
                     value={message} 
                     onChange={(e) => setMessage(e.target.value)} 
                     required 

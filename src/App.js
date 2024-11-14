@@ -20,6 +20,8 @@ import EditarReto from './pages/admin/EditarReto';
 import Home from './pages/Home';
 import Footer from './components/Footer';
 import PublicRoute from './components/PublicRoute';
+import RecuperarPassword from './pages/RecuperarPassword';
+import ResetPassword from './pages/ResetPassword';
 
 
 function App() {
@@ -63,6 +65,8 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/statistics" element={<Statistics />} />
+              <Route path="/forgotpassword" element={<RecuperarPassword />} />
+              <Route path="/reset-password/:token" element={<ResetPassword />} />
               <Route path="/dashboard" element={<PrivateRoute element={<Dashboard />} roleRequired="admin" />} />
               <Route path="/reto" element={<PrivateRoute element={<Reto />} roleRequired="admin" />} />
               <Route path="/retosactivos" element={<PrivateRoute element={<RetosActivos />} roleRequired="admin" />} />
