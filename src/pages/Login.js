@@ -26,7 +26,11 @@ const Login = ({ setIsAuthenticated, setUserMail }) => {
         navigate('/perfil');
       }
     } catch (error) {
-      setMessage(error.message);
+      if (error.response && error.response.data && error.response.data.message) {
+        setMessage(error.response.data.message);
+      } else {
+        setMessage('Ocurrió un error. Por favor, intenta de nuevo.');
+      }
     }
   };
 
@@ -44,7 +48,7 @@ const Login = ({ setIsAuthenticated, setUserMail }) => {
             <input type="email" placeholder="Correo" value={mail} onChange={(e) => setMail(e.target.value)} required />
             <input type="password" placeholder="Contraseña" value={password} onChange={(e) => setPassword(e.target.value)} required />
             <button type="submit" className="login-button">Iniciar sesión</button>
-            {message && <p>{message} errors</p>}
+            {message && <p>{message}</p>}
             <a href="#" className="forgot-password">¿Se te olvidó tu contraseña?</a>
             <hr />
             <button type="button" className="create-account-button" onClick={handleRegisterClick}>Crear una cuenta nueva</button>

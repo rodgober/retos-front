@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import './Dashboard.css';
 import config from '../../config';
 
@@ -118,6 +119,11 @@ function Dashboard() {
         <a href="/reto" className="button-link">Agregar reto</a>
         <a href="/RetosActivos" className="button-link">Retos activos</a>
         <a href="/RetosInactivos" className="button-link">Retos Inactivos</a>
+      </div>
+
+      <div style={{ marginTop: '20px' }}>
+        <h2>Rendimiento del Sitio</h2>
+        <SpeedInsights />
       </div>
     </div>
   );
