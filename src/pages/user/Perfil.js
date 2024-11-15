@@ -8,7 +8,6 @@ const Perfil = () => {
   const [retos, setRetos] = useState([]);
   const [error, setError] = useState(null);
   const [perfil, setPerfil] = useState([]);
-  const [totalRetos, settotalRetos] = useState(0);
   
   useEffect(() => {
     const obtenerRetos = async () => {
@@ -68,36 +67,16 @@ const Perfil = () => {
       }
     };
 
-    const obtenerTotalRetos = async () => {
-      try {
-        const token = localStorage.getItem('token'); // Obtener token JWT
-        const response = await fetch(config.apiBaseUrl + '/api/reto/retosactivos/count', {
-          method: 'GET',
-          headers: {
-            Authorization: `Bearer ${token}`, 
-          },
-        });
-        const data = await response.json();
-        if (!response.ok) {
-          throw new Error(data.message || 'Error al obtener los retos resueltos');
-        }
-
-        settotalRetos(data);
-      } catch (error) {
-        setError(error.message);
-      }
-    };
     obtenerRetos();
     obtenerRetosResueltos();
     obtenerPerfil();
-    obtenerTotalRetos();
   }, []);
 
   return (
     <div className="container">
             <h2>{perfil.name} {perfil.lastName}</h2>
             <h2>Nivel: {~~(retosResueltos.length / 3)}</h2>
-            <h3>Retos resueltos: {retosResueltos.length} de {totalRetos.totalRetos} totales.</h3>
+            <h3>Retos resueltos: {retosResueltos.length}</h3>
             <hr></hr>
             <h2>Retos por resolver</h2>
               <div className="resolved-challenges">
