@@ -20,6 +20,7 @@ const DetalleReto = () => {
   const [excesointentos, setExcesointentos] = useState(false);
   const [numintento, setNumintento] = useState(0);
   const [respuestaCorrecta, setrespuestaCorrecta] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
       //Trae todos los detalles del reto y los guarda en reto
       const fetchReto = async () => {
@@ -117,6 +118,7 @@ const DetalleReto = () => {
     e.preventDefault();
     if (!excesointentos) {
       try {
+        setIsSubmitting(true); // Deshabilita el botón
         const token = localStorage.getItem('token'); // Token JWT almacenado
         const { data } = await axios.post(config.apiBaseUrl + '/api/reto/' + id + '/responder', { respuesta, nombre },{headers: {Authorization: `Bearer ${token}`,},
         });
@@ -137,6 +139,8 @@ const DetalleReto = () => {
         }
         setMensaje(data.message);
         setResuelto(data.correcto);
+        setIsSubmitting(false); // Deshabilita el botón
+        setRespuesta('');
       } catch (error) {
         setMensaje('Error al enviar la respuesta');
       }
@@ -199,9 +203,11 @@ const DetalleReto = () => {
           
           <button 
             type="submit" 
+            disabled={!respuesta.trim() || isSubmitting}
             className={`reto-button ${excesointentos ? 'hide' : ''}`}
           >
-            Enviar respuesta
+            
+            {isSubmitting ? 'Enviando...' : 'Enviar respuesta'}
         </button>
         <p>{mensaje}</p>
         {excesointentos ? <p>Haz excedido el número de intentos en la última hora, te recomiendo que revises muy bien el reto y vuelvas mas tarde</p>: null}

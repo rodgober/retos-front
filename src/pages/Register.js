@@ -55,7 +55,7 @@ function Register() {
             <form className="register-form" onSubmit={handleSubmit}>
             <input type="text" placeholder="Nombre" value={name} onChange={(e) => setName(e.target.value)} required />
             <input type="text" placeholder="Apellido" value={lastName} onChange={(e) => setLastname(e.target.value)} required />
-              <input type="email" placeholder="Correo" value={mail} onChange={(e) => setMail(e.target.value)} required />
+              <input type="email" placeholder="Correo" value={mail} onChange={(e) => setMail(e.target.value.toLowerCase())} required />
               <input type="password" placeholder="Contraseña" value={password} onChange={(e) => setPassword(e.target.value)} required />
               <input type="password" placeholder="Confirmar Contraseña" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
               <button type="submit" className="register-button">Crear cuenta</button>
