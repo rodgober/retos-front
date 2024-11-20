@@ -1,6 +1,6 @@
 .about-container {
     display: flex;
-    gap: 20px; /* Espacio entre el texto y la imagen */
+    gap: 15px; /* Espacio entre el texto y la imagen */
     padding: 20px;
     align-items: center; /* Centra verticalmente los elementos */
 }
@@ -10,8 +10,8 @@
 }
 
 .about-text h2, p {
-    margin-bottom: 20px; /* Ajusta el valor según el espacio deseado */
-    line-height: 1.6; /* Espaciado entre líneas dentro del párrafo para mejorar la legibilidad */
+    margin-bottom: 10px; /* Ajusta el valor según el espacio deseado */
+    line-height: 1.4; /* Espaciado entre líneas dentro del párrafo para mejorar la legibilidad */
 }
 
 .about-image img {
