@@ -54,13 +54,17 @@ const ListarRetos = () => {
       <div className="container">
         <h1>Retos pendientes</h1>
         {error && <p>{error}</p>}
-        <div className="resolved-challenges">
-            {retos.map((reto) => (
-              <a href={`/reto/${reto._id}`} className="challenge-card">
-                <h3 className="challenge-title">{reto.nombre}</h3>
-              </a>
-            ))}
-        </div>
+        {retos.length > 0 ? (
+                <div className="resolved-challenges">
+                {retos.map((reto) => (
+                  <a href={`/reto/${reto._id}`} className="challenge-card">
+                    <h3 className="challenge-title">{reto.nombre}</h3>
+                  </a>
+                ))}
+            </div>
+            ) : (
+              <h3>Felicidades, terminaste con todos los retos pendientes, pero no te preocupes, los sábados agregamos nuevos retos.</h3>
+            )}
 
         <h1>Retos resueltos</h1>
         <div className="resolved-challenges">

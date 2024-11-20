@@ -78,6 +78,31 @@
     font-weight: bold;
 }
 
+.medal-1::before {
+    content: "🥇"; /* Medalla de oro */
+}
+
+.medal-2::before {
+    content: "🥈"; /* Medalla de oro */
+}
+
+.medal-3::before {
+    content: "🥉"; /* Medalla de oro */
+}
+
+.not-medal-1 {
+    display: none;
+}
+
+.not-medal-2 {
+    display: none;
+}
+
+.not-medal-3 {
+    display: none;
+}
+
+
 /* Estilo responsive */
 @media (max-width: 600px) {
     .ranking-table thead {
@@ -109,4 +134,12 @@
         text-transform: uppercase;
         color: #666;
     }
+
+    .ranking-table td.points::before {
+        content: "Puntos: ";
+      }
+
+      .ranking-table td.position::before {
+        content: "Posición: ";
+      }
 }

@@ -80,11 +80,21 @@ const Perfil = () => {
             <hr></hr>
             <h2>Retos por resolver</h2>
               <div className="resolved-challenges">
-              {retos.map((reto, index) => (
-                  <a href={`/reto/${reto._id}`} className="challenge-card">
-                      <h3 className="challenge-title">{reto.nombre}</h3>
-                  </a>
-              ))}
+
+              {retos.length > 0 ? (
+                <div className="resolved-challenges">
+                  {retos.map((reto, index) => (
+                      <a href={`/reto/${reto._id}`} className="challenge-card">
+                          <h3 className="challenge-title">{reto.nombre}</h3>
+                      </a>
+                  ))}
+            </div>
+            ) : (
+                <h3>Felicidades, terminaste con todos los retos pendientes, pero no te preocupes, los sábados agregamos nuevos retos.</h3>
+            )}
+
+
+
             </div>
             <hr></hr>
             <h2>Retos resueltos</h2>

@@ -42,9 +42,12 @@ useEffect(() => {
                 <tbody>
                     {usuarios.slice(0, 10).map((usuario, index) => (
                         <tr key={usuario._id} className={`rank-${index + 1}`}>
-                            <td>{index + 1}</td>
+                            <td className="position">
+                              <span className={`medal-${index + 1}`}></span>
+                              <span className={`not-medal-${index + 1}`}>{index + 1}</span>
+                            </td>
                             <td>{usuario.name} {usuario.lastName}</td>
-                            <td>{usuario.totalRespuestas}</td>
+                            <td className="points">{usuario.totalRespuestas}</td>
                         </tr>
                     ))}
                 </tbody>

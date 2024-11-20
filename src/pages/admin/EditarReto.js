@@ -87,6 +87,7 @@ const handleSubmit = async (e) => {
       setMessage('Por favor selecciona un razonamiento');
       return;
     }
+
     // Estructura de datos a enviar
      // Crear un FormData para enviar los datos junto con la imagen
      setRespuesta([0,0]);
@@ -255,7 +256,6 @@ const handleSubmit = async (e) => {
                             required
                         />
                     </div>
-
 
                     <div className="form-group">
                         <label>Razonamiento:</label>

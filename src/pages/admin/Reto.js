@@ -240,7 +240,7 @@ const Reto = () => {
                 <option value="false">Inactivo</option>
               </select>
             </div>
-          <div class="form-group full-width">
+          <div className="form-group full-width">
             <button type="submit">Agregar Reto</button>
           </div>
         </form>
