@@ -169,7 +169,7 @@ const DetalleReto = () => {
         */}
         {reto.pregunta && <img src={reto.pregunta} alt="Imagen del Reto" />}
         {respuestaCorrecta && <ConfettiAnimation />}
-        {reto?.tipo === 'multiple' && (reto?.opciones && reto?.opciones.trim() !== "") && (
+        {reto?.tipo === 'multiple' && (reto?.opciones && (reto?.opciones.trim() !== "")&&(reto?.opciones.trim() !== "null")) && (
             <img src={reto.opciones} alt="Imagen de las opciones" />)}
       
         {resuelto ? <div><img src={retoResuelto.razonamiento} alt="Imagen del razonamiento" /> </div> : 
